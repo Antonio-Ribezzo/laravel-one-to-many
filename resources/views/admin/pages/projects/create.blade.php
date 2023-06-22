@@ -25,6 +25,15 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
+                    {{-- type of project --}}
+                    <label for="type" class="form-label">Type of Project</label>
+                    <select class="form-select form-select-lg" name="type_id" id="type">
+                        <option value="">-- Choose type of project --</option>
+                        @foreach ($types as $el)
+                            <option value="{{ $el->id }}">{{ $el->name_type }}</option>
+                        @endforeach
+                    </select>
+
                     {{-- project buyer --}}
                     <label for="buyer" class="form-label">Project buyer</label>
                     <input type="text" class="form-control mb-4 @error('buyer') is-invalid @enderror" id="buyer" name="buyer" max="25" >

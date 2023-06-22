@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 
+//richiamo l'altro Model
+use App\Models\Type;
+
 class ProjectController extends Controller
 {
     /**
@@ -31,7 +34,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.projects.create');
+        $types= Type::all();
+
+        return view('admin.pages.projects.create', compact('types'));
     }
 
     /**

@@ -24,13 +24,14 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>['required','max:255'],
-            'description'=>['nullable'],
-            'buyer'=>['nullable'],
-            'cover_image'=>['nullable','image'],
-            'project_date'=>['nullable'],
-            'programming_languages'=>['required'],
-            'link'=>['required']
+            'type_id'=>'nullable',
+            'title'=>'required|max:255',
+            'description'=>'nullable',
+            'buyer'=>'nullable',
+            'cover_image'=>'nullable','image',
+            'project_date'=>'nullable',
+            'programming_languages'=>'required',
+            'link'=>'required'
         ];
     }
 }
