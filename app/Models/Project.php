@@ -14,6 +14,7 @@ class Project extends Model
     protected $table = 'projects';
 
     protected $fillable = [
+        'type_id',
         'title',
         'description',
         'buyer',
@@ -22,4 +23,8 @@ class Project extends Model
         'programming_languages',
         'link'
     ];
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
