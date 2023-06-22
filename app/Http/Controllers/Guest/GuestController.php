@@ -15,4 +15,10 @@ class GuestController extends Controller
 
         return view('guests.pages.home', compact('projects'));
     }
+
+    public function show($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('guests.pages.show', compact('project'));
+    }
 }

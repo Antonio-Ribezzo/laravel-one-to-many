@@ -22,7 +22,12 @@ Route::get('/', function () {
 });
 
 //guest
-Route::get('/portfolio', [GuestController::class, 'index'])->name('guestPortfolio');
+// Route::get('/portfolio', [GuestController::class, 'index'])->name('guestPortfolio');
+
+// Route::get('/itemsPortolio', [GuestController::class, 'show'])->name('guestShow');
+
+Route::resource('/portfolio', GuestController::class);
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
