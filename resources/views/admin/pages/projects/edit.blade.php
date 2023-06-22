@@ -23,6 +23,15 @@
                     <label for="description" class="form-label">Project Description</label>
                     <textarea class="form-control mb-4 @error('description') is-invalid @enderror" name="description" id="description" rows="3">{{ old('description') ?? $project->description }}</textarea>
 
+                    {{-- type of project --}}
+                    <label for="type" class="form-label">Type of Project</label>
+                    <select class="form-select form-select-lg" name="type_id" id="type">
+                        <option value="">-- Choose type of project --</option>
+                        @foreach ($types as $el)
+                            <option value="{{ $el->id }}"{{old('type_id', $project->type_id) == $el->id ? 'selected' : ''}}>{{ $el->name_type }}</option>
+                        @endforeach
+                    </select>
+
                     {{-- project buyer --}}
                     <label for="buyer" class="form-label">Project buyer</label>
                     <input type="text" class="form-control mb-4 @error('buyer') is-invalid @enderror" id="buyer" name="buyer" max="25" value="{{ old('buyer') ?? $project->buyer }}">

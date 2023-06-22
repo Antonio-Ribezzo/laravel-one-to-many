@@ -8,6 +8,9 @@
             <div class="card-body">
                 <h2 class="card-title mb-3 text-center">{{ $el->title }}</h2>
                 <h6 class="card-subtitle mb-2 text-body-secondary text-center">Project numero: {{ $key + 1}}</h6>
+                <h6 class="card-subtitle mb-2 text-body-secondary"><span class="text-decoration-underline">Type</span>:
+                        {{ $el->type->name_type }}
+                </h6>
                 <h6 class="card-subtitle mb-2 text-body-secondary"><span class="text-decoration-underline">Description</span>: {{ $el->description }}</h6>
                 <h6 class="card-subtitle mb-2 text-body-secondary"><span class="text-decoration-underline">Buyer</span>: {{ $el->buyer }}</h6>
                 <h6 class="card-subtitle mb-2 text-body-secondary"><span class="text-decoration-underline">Technologies</span>: {{ $el->programming_languages }}</h6>
